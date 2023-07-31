@@ -1,0 +1,13 @@
+
+// Base 
+@use "./base/defaultStyle";
+@use "./base/normalize";
+@use "./base/wrapper";
+@use "./base/typography";
+
+// Components 
+@use "./components/test";
+
+// Pages 
+@use "./pages/resultsVersion";
+@use "./pages/tvVersion";
