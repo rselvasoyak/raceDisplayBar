@@ -2,6 +2,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: lightblue;
 }
 
 .resultsContainer, .topContainer, .raceInfo, .timerInfo, .detailedRacerInfo, .timer, .temp{
@@ -9,49 +10,78 @@ main{
 }
 .resultsContainer {
     width: 75%;
-    height: 90vh;
-    border: 4px solid green;
-    padding: 2rem 0 2rem 0;
-    background-color: grey;
+    // height: 90vh;
+    border: 15px solid green;
+    background-color: rgba($color: #d9d7d7, $alpha: 0.3);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     .topContainer{
         width: 95%;
-        height: 20%;
-        border: 2px solid red;
+        padding: .5rem 0;
+        margin: 1rem 0 .5rem 0;
+        background-color: green;
+        box-shadow: -1px 1px 2px #252525;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        .timerInfo, .raceInfo{
+            height: 90%;
+        }
         .raceInfo{
             width: 48%;
-            height: 80%;
-            border: 2px solid blue;
+            padding: .6rem 0 .7rem 2rem;
+            margin: .5rem 0;
+            background-color: whitesmoke;
+            // border: 2px solid blue;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
+            h2{
+                font-size: 1.8rem;
+                margin: 0;
+                text-transform: uppercase;
+            }
+            h1{
+                font-size: 2.1rem;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                margin-top: 1rem;
+            }
         }
         .timerInfo{
             width: 48%;
-            height: 80%;
-            border: 2px solid blue;
+            // border: 2px solid blue;
+            background-color: whitesmoke;
             display: flex;
             justify-content: space-around;
             align-items: center;
             .timer{
-                width: 50%;
-                height: 95%;
-                border: 2px solid cyan;
+                width: 55%;
+                // height: 95%;
+                background-color: #E15805;
+                margin: .2rem .3rem;
+                // border: 2px solid cyan;
+                font-size: 1.8rem;
+                text-transform: uppercase;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                p{
+                    margin: .5rem 0 0 0;
+                }
+                time{
+                    font-size: 3.1rem;
+                    margin-bottom: .3rem;
+                }
             }
             .temp{
                 width: 45%;
                 height: 95%;
-                border: 2px solid cyan;
+                font-size: 3.2rem;
+                // border: 2px solid cyan;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -59,22 +89,50 @@ main{
         }
     }
     .detailedRacerInfo{
+        color: whitesmoke;
         width: 95%;
-        height: 72%;
-        border: 2px solid purple;
+        // height: 82%;
+        // border: 2px solid purple;
         display: flex;
         flex-direction: column;
         align-content: space-between;
         justify-content: center;
-        margin-right: 0;
+        margin: .5rem 0 1rem 0;
         table{
             text-align: left;
             border: 2px solid green;
-            height: 95%;
+            height: 100%;
+            font-size: 1.8rem;
+            // border-radius: 20px;
+            border-collapse: collapse;
+        }
+        thead tr th, tbody tr td{
+            padding-left: 2.5rem;
+        }
+        thead tr {
+            // border-radius: 20px;
+            background-color: #252525;
+            th:first-child{
+                border-top-left-radius: 20px;
+            }
         }
         tbody{
             padding-left: 3%;
             border: 2px solid red;
+            tr td{
+                padding-top:.35rem;
+                padding-bottom: .35rem;
+            }
+            tr:nth-child(odd) {
+                    background: linear-gradient(to bottom, #333745 15%,
+                            #4c516d 40%,
+                            #9198af 80%,
+                            rgb(179, 179, 179) 100%);
+                    // border-radius: 20px;
+                }
+            tr:nth-child(even){
+                background-color: #333745;
+            }
         }
     }
 }
