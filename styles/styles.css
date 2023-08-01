@@ -392,16 +392,18 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background-color: transparent;
+  background-color: rgb(10, 47, 66);
 }
 
 .mainFrame {
   margin-left: 2rem;
-  width: 24.5rem;
-  height: 90vh;
-  border: 2px solid red;
+  width: 22rem;
+  max-height: 92vh;
+  border: 10px solid red;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   border-radius: 25px;
-  background-color: rgba(128, 128, 128, 0.6);
+  background-color: rgba(217, 215, 215, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,21 +414,39 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 15px;
+  padding: 3px 0;
 }
 .mainFrame .logo, .mainFrame .timer, .mainFrame .racerData {
-  border-radius: 25px;
+  border-radius: 20px;
 }
 .mainFrame .logo {
-  width: 22rem;
-  height: 15%;
-  border: 2px solid black;
+  width: 96%;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 10%;
+  background-color: #252525;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.mainFrame .logo img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  -o-object-position: center;
+     object-position: center;
 }
 .mainFrame .timer {
-  width: 22rem;
-  height: 17%;
-  border: 2px solid blue;
-  margin-top: 10px;
+  width: 95%;
+  max-height: 20%;
+  padding: 0.5rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px 0;
+  background-color: #E15805;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,16 +461,26 @@ main {
       align-content: center;
 }
 .mainFrame .timer p, .mainFrame .timer time {
-  border: 2px solid red;
   text-align: center;
   -ms-flex-item-align: center;
       align-self: center;
 }
+.mainFrame .timer p {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 0.2rem;
+  letter-spacing: -0.3px;
+  text-shadow: -0.5px 0.5px 2px #464545;
+}
+.mainFrame .timer time {
+  font-size: 2.5rem;
+  text-shadow: -1px 1px 1px #464545;
+}
 .mainFrame .racerData {
-  width: 22rem;
-  height: 60%;
-  border: 2px solid purple;
-  margin-top: 10px;
+  width: 95%;
+  height: 65%;
+  border-radius: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,15 +491,70 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  table-layout: fixed;
 }
 .mainFrame .racerData table {
   text-align: left;
+  font-size: 1.7rem;
   width: 100%;
-  height: 100%;
   padding-left: 5%;
+  border-radius: 20px;
+  table-layout: auto;
   -ms-flex-item-align: center;
       align-self: center;
+  border-collapse: collapse;
+  background-color: #252525;
 }
-.mainFrame .racerData tbody {
-  border: 2px solid red;
+.mainFrame .racerData table thead {
+  text-align: left;
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+.mainFrame .racerData table thead tr {
+  width: 100%;
+}
+.mainFrame .racerData table thead tr th {
+  padding: 0.3rem 0.2rem;
+}
+.mainFrame .racerData table thead th:first-child {
+  padding-left: 1rem;
+  padding-right: 0;
+  width: 40%;
+}
+.mainFrame .racerData table thead th:last-child {
+  width: 40%;
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+.mainFrame .racerData table tbody {
+  color: rgb(189, 182, 182);
+}
+.mainFrame .racerData table tbody tr td:first-child {
+  padding-left: 0.5rem;
+  width: 33.3333333333;
+  padding-right: 0;
+}
+.mainFrame .racerData table tbody tr:nth-child(odd) {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #333745), color-stop(40%, #4c516d), color-stop(80%, #9198af), to(rgb(179, 179, 179)));
+  background: linear-gradient(to bottom, #333745 15%, #4c516d 40%, #9198af 80%, rgb(179, 179, 179) 100%);
+  border-radius: 20px;
+}
+.mainFrame .racerData table tbody tr:nth-child(even) {
+  background-color: #333745;
+}
+.mainFrame .racerData table tbody tr:last-child {
+  border-radius: 20px;
+}
+.mainFrame .racerData table tbody .racerTime {
+  font-size: 1.9rem;
+}
+.mainFrame .racerData table tbody span {
+  padding: 0;
+  margin: 0;
+}
+.mainFrame .racerData table tbody .additionalInfo {
+  font-size: 1.6rem;
+  padding-left: 10%;
 }
