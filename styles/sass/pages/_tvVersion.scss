@@ -124,13 +124,13 @@ main{
                         #4c516d 40%,
                         #9198af 80%,
                         rgb(179, 179, 179) 100%);
-                    border-radius: 20px;
+                    // border-radius: 20px;
                 }
                 tr:nth-child(even){
                     background-color: #333745;
                 }
                 tr:last-child{
-                    border-radius: 20px;
+                    // border-radius: 20px;
                 }
                 .racerTime{
                     font-size: 1.9rem;
