@@ -1,13 +1,13 @@
 main{
     height: 100vh;
     justify-content:flex-start;
-    // background-color: rgb(10, 47, 66);
-    // background-color: transparent;
+    align-items: flex-start;
+    margin-top: 2rem;
+    background-color: transparent;
 }
 .mainFrame {
     margin-left: 2rem;
     width: 22rem;
-    max-height: 92vh;
     border: 10px solid red;
     box-sizing: content-box;
     border-radius: 25px;
@@ -37,9 +37,9 @@ main{
     }
     .timer{
         width: 95%;
-        max-height: 20%;
+        // max-height: 25%;
         // border: 2px solid blue;
-        padding: .5rem 0;
+        padding: .6rem .2rem;
         box-sizing: border-box;
         margin: 5px 0;
         background-color: #E15805;
@@ -53,7 +53,7 @@ main{
             align-self: center;
         }
         p{
-            font-size: 1.7rem;
+            font-size: 1.65rem;
             text-transform: uppercase;
             margin: 0;
             padding: 0 .2rem;
@@ -68,9 +68,7 @@ main{
     .racerData{
         width: 95%;
         height: 65%;
-        // border: 2px solid purple;
         border-radius: 25px;
-        // margin-top: 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -112,11 +110,12 @@ main{
                 }
             }
             tbody{
-                color: rgb(189, 182, 182);
+                color: whitesmoke;
+                tr td{
+                    padding: .5rem 0 .5rem .2rem;
+                }
                 tr td:first-child{
                     padding-left: .5rem;
-                    width: calc(100 / 3);
-                    // border:2px solid green;
                     padding-right: 0;
                 }
                 tr:nth-child(odd){
@@ -130,7 +129,7 @@ main{
                     background-color: #333745;
                 }
                 tr:last-child{
-                    // border-radius: 20px;
+                    border-radius: 20px;
                 }
                 .racerTime{
                     font-size: 1.9rem;

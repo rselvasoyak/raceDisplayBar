@@ -2,19 +2,21 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: transparent;
 }
 
 .resultsContainer, .topContainer, .raceInfo, .timerInfo, .detailedRacerInfo, .timer, .temp{
     border-radius: 25px;
 }
 .resultsContainer {
-    width: 75%;
+    // width: 75%;
     border: 15px solid green;
     background-color: rgba($color: #d9d7d7, $alpha: 0.3);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Inter', sans-serif;
+    box-shadow: -2px 2px 6px #303030;
     .topContainer{
         width: 95%;
         padding: .5rem 0;
@@ -40,12 +42,17 @@ main{
                 font-size: 1.8rem;
                 margin: 0;
                 text-transform: uppercase;
+                font-style: italic;
+                font-weight: 450;
+                text-shadow: -.2px .2px 2px #252525;
             }
             h1{
                 font-size: 2.1rem;
                 text-transform: uppercase;
                 margin-bottom: 0;
                 margin-top: .7rem;
+                font-weight: 800;
+                text-shadow: -.5px .5px 2px #252525;
             }
         }
         .timerInfo{
@@ -66,10 +73,14 @@ main{
                 justify-content: center;
                 p{
                     margin: .5rem 0 0 0;
+                    color: whitesmoke;
+                    text-shadow: -2px 1px 2px #000000;
                 }
                 time{
                     font-size: 3rem;
                     margin-bottom: .22rem;
+                    color: whitesmoke;
+                    text-shadow: -3px 1px 2px #252525;
                 }
             }
             .temp{
@@ -79,6 +90,7 @@ main{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                text-shadow: -2px 1px 3px #000000;
             }
         }
     }
@@ -92,7 +104,7 @@ main{
         margin: .5rem 0 1rem 0;
         table{
             text-align: left;
-            border: 2px solid green;
+            // border: 2px solid green;
             height: 100%;
             font-size: 1.7rem;
             border-collapse: collapse;
@@ -104,16 +116,21 @@ main{
             border-radius: 20px;
             background-color: #252525;
             th{
-                padding: .7rem 0 .7rem 2.7rem;
+                padding: 1rem 0 1rem 2.7rem;
                 text-shadow: -1px 1px 2px grey;
+                box-shadow: -.2px -.2px 2px #303030;
             }
         }
         tbody{
             padding-left: 3%;
+            // text-shadow: -3px 3px 2px #000000;
+            tr{
+                box-shadow: -.2px -.2px 2px #303030;
+            }
             tr td{
-                padding-top: .4rem;
-                padding-bottom: .4rem;
-                text-shadow: -1px 1px 2px #252525;
+                padding-top: .8rem;
+                padding-bottom: .8rem;
+                text-shadow: -2px 1px 2px #000000;
             }
             tr:nth-child(odd) {
                     background: linear-gradient(to bottom, #333745 10%,
@@ -122,7 +139,8 @@ main{
                             rgb(179, 179, 179) 100%);
                 }
             tr:nth-child(even){
-                background-color:rgba(#333745, 0.9);
+                background-color:rgba(#333745, 1);
+                // box-shadow: -1px 1px 3px #757474;
             }
         }
     }

@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1300px;
+  max-width: 1200px;
   width: 95%;
   margin: 0 auto;
 }
@@ -235,12 +235,6 @@ html {
   overflow: hidden;
 }
 
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 html, body {
   font-size: 62.5%;
 }
@@ -261,7 +255,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: lightblue;
+  background-color: transparent;
 }
 
 .resultsContainer, .topContainer, .raceInfo, .timerInfo, .detailedRacerInfo, .timer, .temp {
@@ -269,7 +263,6 @@ main {
 }
 
 .resultsContainer {
-  width: 75%;
   border: 15px solid green;
   background-color: rgba(217, 215, 215, 0.3);
   -webkit-box-orient: vertical;
@@ -281,6 +274,9 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Inter", sans-serif;
+  -webkit-box-shadow: -2px 2px 6px #303030;
+          box-shadow: -2px 2px 6px #303030;
 }
 .resultsContainer .topContainer {
   width: 95%;
@@ -324,12 +320,17 @@ main {
   font-size: 1.8rem;
   margin: 0;
   text-transform: uppercase;
+  font-style: italic;
+  font-weight: 450;
+  text-shadow: -0.2px 0.2px 2px #252525;
 }
 .resultsContainer .topContainer .raceInfo h1 {
   font-size: 2.1rem;
   text-transform: uppercase;
   margin-bottom: 0;
   margin-top: 0.7rem;
+  font-weight: 800;
+  text-shadow: -0.5px 0.5px 2px #252525;
 }
 .resultsContainer .topContainer .timerInfo {
   width: 48%;
@@ -365,10 +366,14 @@ main {
 }
 .resultsContainer .topContainer .timerInfo .timer p {
   margin: 0.5rem 0 0 0;
+  color: whitesmoke;
+  text-shadow: -2px 1px 2px #000000;
 }
 .resultsContainer .topContainer .timerInfo .timer time {
   font-size: 3rem;
   margin-bottom: 0.22rem;
+  color: whitesmoke;
+  text-shadow: -3px 1px 2px #252525;
 }
 .resultsContainer .topContainer .timerInfo .temp {
   width: 45%;
@@ -383,6 +388,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-shadow: -2px 1px 3px #000000;
 }
 .resultsContainer .detailedRacerInfo {
   color: whitesmoke;
@@ -403,7 +409,6 @@ main {
 }
 .resultsContainer .detailedRacerInfo table {
   text-align: left;
-  border: 2px solid green;
   height: 100%;
   font-size: 1.7rem;
   border-collapse: collapse;
@@ -416,23 +421,29 @@ main {
   background-color: #252525;
 }
 .resultsContainer .detailedRacerInfo thead tr th {
-  padding: 0.7rem 0 0.7rem 2.7rem;
+  padding: 1rem 0 1rem 2.7rem;
   text-shadow: -1px 1px 2px grey;
+  -webkit-box-shadow: -0.2px -0.2px 2px #303030;
+          box-shadow: -0.2px -0.2px 2px #303030;
 }
 .resultsContainer .detailedRacerInfo tbody {
   padding-left: 3%;
 }
+.resultsContainer .detailedRacerInfo tbody tr {
+  -webkit-box-shadow: -0.2px -0.2px 2px #303030;
+          box-shadow: -0.2px -0.2px 2px #303030;
+}
 .resultsContainer .detailedRacerInfo tbody tr td {
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  text-shadow: -1px 1px 2px #252525;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  text-shadow: -2px 1px 2px #000000;
 }
 .resultsContainer .detailedRacerInfo tbody tr:nth-child(odd) {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #333745), color-stop(30%, #4c516d), color-stop(70%, #9198af), to(rgb(179, 179, 179)));
   background: linear-gradient(to bottom, #333745 10%, #4c516d 30%, #9198af 70%, rgb(179, 179, 179) 100%);
 }
 .resultsContainer .detailedRacerInfo tbody tr:nth-child(even) {
-  background-color: rgba(51, 55, 69, 0.9);
+  background-color: #333745;
 }
 
 main {
@@ -440,12 +451,16 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 2rem;
+  background-color: transparent;
 }
 
 .mainFrame {
   margin-left: 2rem;
   width: 22rem;
-  max-height: 92vh;
   border: 10px solid red;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -488,8 +503,7 @@ main {
 }
 .mainFrame .timer {
   width: 95%;
-  max-height: 20%;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0.2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 5px 0;
@@ -513,7 +527,7 @@ main {
       align-self: center;
 }
 .mainFrame .timer p {
-  font-size: 1.7rem;
+  font-size: 1.65rem;
   text-transform: uppercase;
   margin: 0;
   padding: 0 0.2rem;
@@ -576,11 +590,13 @@ main {
   padding-right: 0;
 }
 .mainFrame .racerData table tbody {
-  color: rgb(189, 182, 182);
+  color: whitesmoke;
+}
+.mainFrame .racerData table tbody tr td {
+  padding: 0.5rem 0 0.5rem 0.2rem;
 }
 .mainFrame .racerData table tbody tr td:first-child {
   padding-left: 0.5rem;
-  width: 33.3333333333;
   padding-right: 0;
 }
 .mainFrame .racerData table tbody tr:nth-child(odd) {
@@ -589,6 +605,9 @@ main {
 }
 .mainFrame .racerData table tbody tr:nth-child(even) {
   background-color: #333745;
+}
+.mainFrame .racerData table tbody tr:last-child {
+  border-radius: 20px;
 }
 .mainFrame .racerData table tbody .racerTime {
   font-size: 1.9rem;

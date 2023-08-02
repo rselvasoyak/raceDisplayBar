@@ -1,8 +1,12 @@
+// Abstract 
+@use "./abstract/mediaQueries/resultMediaQuery";
+@use "./abstract/mediaQueries/tvMediaQuery";
+@use "./abstract/variables";
+
 
 // Base 
 @use "./base/defaultStyle";
 @use "./base/normalize";
-@use "./base/wrapper";
 @use "./base/typography";
 
 // Components 
