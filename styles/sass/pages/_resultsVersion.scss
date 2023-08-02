@@ -10,7 +10,6 @@ main{
 }
 .resultsContainer {
     width: 75%;
-    // height: 90vh;
     border: 15px solid green;
     background-color: rgba($color: #d9d7d7, $alpha: 0.3);
     flex-direction: column;
@@ -33,7 +32,6 @@ main{
             padding: .6rem 0 .7rem 2rem;
             margin: .5rem 0;
             background-color: whitesmoke;
-            // border: 2px solid blue;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -47,22 +45,19 @@ main{
                 font-size: 2.1rem;
                 text-transform: uppercase;
                 margin-bottom: 0;
-                margin-top: 1rem;
+                margin-top: .7rem;
             }
         }
         .timerInfo{
             width: 48%;
-            // border: 2px solid blue;
             background-color: whitesmoke;
             display: flex;
             justify-content: space-around;
             align-items: center;
             .timer{
                 width: 55%;
-                // height: 95%;
                 background-color: #E15805;
                 margin: .2rem .3rem;
-                // border: 2px solid cyan;
                 font-size: 1.8rem;
                 text-transform: uppercase;
                 display: flex;
@@ -73,15 +68,14 @@ main{
                     margin: .5rem 0 0 0;
                 }
                 time{
-                    font-size: 3.1rem;
-                    margin-bottom: .3rem;
+                    font-size: 3rem;
+                    margin-bottom: .22rem;
                 }
             }
             .temp{
                 width: 45%;
                 height: 95%;
                 font-size: 3.2rem;
-                // border: 2px solid cyan;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -91,8 +85,6 @@ main{
     .detailedRacerInfo{
         color: whitesmoke;
         width: 95%;
-        // height: 82%;
-        // border: 2px solid purple;
         display: flex;
         flex-direction: column;
         align-content: space-between;
@@ -102,36 +94,35 @@ main{
             text-align: left;
             border: 2px solid green;
             height: 100%;
-            font-size: 1.8rem;
-            // border-radius: 20px;
+            font-size: 1.7rem;
             border-collapse: collapse;
         }
         thead tr th, tbody tr td{
-            padding-left: 2.5rem;
+            padding-left: 2.7rem;
         }
         thead tr {
-            // border-radius: 20px;
+            border-radius: 20px;
             background-color: #252525;
-            th:first-child{
-                border-top-left-radius: 20px;
+            th{
+                padding: .7rem 0 .7rem 2.7rem;
+                text-shadow: -1px 1px 2px grey;
             }
         }
         tbody{
             padding-left: 3%;
-            border: 2px solid red;
             tr td{
-                padding-top:.35rem;
-                padding-bottom: .35rem;
+                padding-top: .4rem;
+                padding-bottom: .4rem;
+                text-shadow: -1px 1px 2px #252525;
             }
             tr:nth-child(odd) {
-                    background: linear-gradient(to bottom, #333745 15%,
-                            #4c516d 40%,
-                            #9198af 80%,
+                    background: linear-gradient(to bottom, #333745 10%,
+                            #4c516d 30%,
+                            #9198af 70%,
                             rgb(179, 179, 179) 100%);
-                    // border-radius: 20px;
                 }
             tr:nth-child(even){
-                background-color: #333745;
+                background-color:rgba(#333745, 0.9);
             }
         }
     }
