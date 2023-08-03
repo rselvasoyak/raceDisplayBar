@@ -12,7 +12,9 @@
 	],
 	"liveSassCompile.settings.generateMap": false,
 	"liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-	"scripts": {
-    "build": "build"
+	"deploy": {
+		"target": "production",
+		"script": "npm run build",
+		"outputPath": "dist"
 	}
 }

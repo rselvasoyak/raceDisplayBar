@@ -4,7 +4,8 @@
   "description": "race data display versions ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "netlify-build": "npm install --production",
+    "start:dev": "http-server -c-1 -p 8081"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rselvasoyak/raceDisplayBar/issues"
   },
-  "homepage": "https://github.com/rselvasoyak/raceDisplayBar#readme"
+  "homepage": "https://github.com/rselvasoyak/raceDisplayBar#readme",
+  "dependencies": {
+    "production": "^0.0.2"
+  }
 }
