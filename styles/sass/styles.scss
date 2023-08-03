@@ -1,6 +1,4 @@
 // Abstract 
-@use "./abstract/mediaQueries/resultMediaQuery";
-@use "./abstract/mediaQueries/tvMediaQuery";
 @use "./abstract/variables";
 
 
@@ -15,3 +13,8 @@
 // Pages 
 @use "./pages/resultsVersion";
 @use "./pages/tvVersion";
+
+
+// Media Queries 
+@use "./abstract/mediaQueries/resultMediaQuery";
+@use "./abstract/mediaQueries/tvMediaQuery";

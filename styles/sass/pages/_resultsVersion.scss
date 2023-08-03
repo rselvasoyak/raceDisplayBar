@@ -118,12 +118,13 @@ main{
             th{
                 padding: 1rem 0 1rem 2.7rem;
                 text-shadow: -1px 1px 2px grey;
-                box-shadow: -.2px -.2px 2px #303030;
+                box-shadow: -.2px -.2px 2px #252525;
+                // border-radius: 25px;
+                // border: 2px solid red;
             }
         }
         tbody{
             padding-left: 3%;
-            // text-shadow: -3px 3px 2px #000000;
             tr{
                 box-shadow: -.2px -.2px 2px #303030;
             }
@@ -133,10 +134,11 @@ main{
                 text-shadow: -2px 1px 2px #000000;
             }
             tr:nth-child(odd) {
-                    background: linear-gradient(to bottom, #333745 10%,
+                    background: linear-gradient(to bottom, #333745 1%,
                             #4c516d 30%,
-                            #9198af 70%,
-                            rgb(179, 179, 179) 100%);
+                            #9198af 90%,
+                        rgb(179, 179, 179) 
+                        100%);
                 }
             tr:nth-child(even){
                 background-color:rgba(#333745, 1);
