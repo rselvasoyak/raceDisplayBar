@@ -4,7 +4,7 @@ html{
 main{
     justify-content:flex-start;
     align-items: flex-start;
-    background-color: rgb(106, 106, 138);
+    // background-color: rgb(106, 106, 138);
 }
 .mainFrame {
     margin-left: 2rem;
@@ -38,6 +38,10 @@ main{
             object-fit: scale-down;
             object-position: center;
         }
+    }
+    // The class will apply when the tablet screen changes orientation
+    .horizontalTablet{
+        display: none;
     }
     .timer{
         width: 95%;
@@ -101,7 +105,8 @@ main{
                 tr{
                     width: 100%;
                     th{
-                        padding: .7rem .2rem .4rem .8rem;
+                        // padding: .7rem .2rem .4rem .8rem;
+                        padding: 1rem;
                         text-transform: uppercase;
                         font-style: italic;
                     }
