@@ -459,7 +459,6 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background-color: rgb(106, 106, 138);
 }
 
 .mainFrame {
@@ -510,6 +509,9 @@ main {
      object-fit: scale-down;
   -o-object-position: center;
      object-position: center;
+}
+.mainFrame .horizontalTablet {
+  display: none;
 }
 .mainFrame .timer {
   width: 95%;
@@ -596,7 +598,7 @@ main {
   width: 100%;
 }
 .mainFrame .racerData table thead tr th {
-  padding: 0.7rem 0.2rem 0.4rem 0.8rem;
+  padding: 1rem;
   text-transform: uppercase;
   font-style: italic;
 }
@@ -790,5 +792,97 @@ main {
   }
   .resultsContainer .detailedRacerInfo tbody tr td:nth-child(3n) {
     font-size: 1.6rem;
+  }
+}
+@media (max-width: 1090px) {
+  .mainFrame {
+    max-width: 23vw;
+  }
+  .mainFrame .timer {
+    padding: 0.6rem 0.2rem;
+  }
+  .mainFrame .timer time {
+    font-size: 3.4rem;
+  }
+  .mainFrame .racerData {
+    table-layout: fixed;
+  }
+  .mainFrame .racerData table thead tr th {
+    font-size: 1.8rem;
+  }
+  .mainFrame .racerData table tbody .racerTime {
+    margin-bottom: 0.1rem;
+  }
+  .mainFrame .racerData table tbody .additionalInfo {
+    right: -21%;
+  }
+}
+@media (max-width: 950px) {
+  .mainFrame {
+    max-width: 25vw;
+  }
+  .mainFrame .timer time {
+    font-size: 3.1rem;
+  }
+}
+@media (max-width: 880px) {
+  .mainFrame {
+    max-width: 27vw;
+  }
+  .mainFrame .timer time {
+    font-size: 3.1rem;
+  }
+}
+@media (max-width: 820px) {
+  .mainFrame {
+    max-width: 30vw;
+  }
+}
+@media (max-width: 780px) {
+  .timer {
+    width: 96%;
+  }
+  .timer p {
+    width: 100%;
+    font-size: 1.7rem;
+  }
+  .timer p span {
+    display: block;
+    margin: 0.1rem;
+  }
+  .timer time {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .mainFrame {
+    max-width: 32vw;
+  }
+}
+@media (max-width: 690px) {
+  .mainFrame {
+    max-width: 36vw;
+  }
+}
+@media (max-width: 605px) {
+  .mainFrame {
+    max-width: 45vw;
+  }
+}
+@media (max-width: 485px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mainFrame {
+    margin: 1rem 0;
+    max-width: 80vw;
   }
 }
