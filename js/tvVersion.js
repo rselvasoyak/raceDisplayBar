@@ -14,7 +14,9 @@ const fetchData = () => {
         console.log(json);
         
         const status = json.raceInfo.status;
+        const racerData = json.raceInfo.drivers;
         updateMainFrameBorder(status);
+        updateTableData(racerData);
     });
 };
 
@@ -31,6 +33,27 @@ const updateMainFrameBorder = status => {
     } else {
         mainFrame.style.borderColor = 'green';
     }
+};
+
+// Updating the TV Table Data 
+const updateTableData = (racerData) => {
+    const tableBody = document.querySelector('tbody');
+    tableBody.innerHTML = ''; // Clear existing table rows
+
+    racerData.forEach((driver) => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${driver.shortName}</td>
+            <td>${driver.lap}</td>
+            <td>
+                <div class="timeInfo">
+                    <span class="racerTime">${driver.currentTime}</span>
+                    <span class="additionalInfo">G:${driver.gapToLeader}</span>
+                </div>
+            </td>
+        `;
+        tableBody.appendChild(newRow);
+    });
 };
 
 // Calling the init function for the tvVersion page
