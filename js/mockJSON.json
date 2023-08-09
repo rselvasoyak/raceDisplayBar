@@ -1,0 +1,111 @@
+{
+    "raceInfo": {
+        "status": {
+            "redFlag": false,
+            "yellowFlag": false,
+            "checkeredFlag": true,
+            "greenFlag": false
+        },
+        "drivers" : [
+            {
+                "name": "Lewis Hamilton",
+                "shortName": "HAM",
+                "nationality": "British",
+                "lap": 18,
+                "currentTime": "1:30.458",
+                "gapToPrevious": "+0.000",
+                "gapToLeader": "0.000"
+            },
+            {
+                "name": "Max Verstappen",
+                "shortName": "VER",
+                "nationality": "Dutch",
+                "lap": 18,
+                "currentTime": "1:30.924",
+                "gapToPrevious": "+0.753",
+                "gapToLeader": "+0.753"
+            },
+            {
+                "name": "Valtteri Bottas",
+                "shortName": "BOT",
+                "nationality": "Finnish",
+                "lap": 18,
+                "currentTime": "1:31.183",
+                "gapToPrevious": "+0.259",
+                "gapToLeader": "+1.012"
+            },
+            {
+                "name": "Sergio Perez",
+                "shortName": "PER",
+                "nationality": "Mexican",
+                "lap": 18,
+                "currentTime": "1:31.569",
+                "gapToPrevious": "+0.386",
+                "gapToLeader": "+1.408"
+            },
+            {
+                "name": "Lando Norris",
+                "shortName": "NOR",
+                "nationality": "British",
+                "lap": 18,
+                "currentTime": "1:31.662",
+                "gapToPrevious": "+0.093",
+                "gapToLeader": "+1.501"
+            },
+            {
+                "name": "Charles Leclerc",
+                "shortName": "LEC",
+                "nationality": "Monégasque",
+                "lap": 18,
+                "currentTime": "1:31.742",
+                "gapToPrevious": "+0.080",
+                "gapToLeader": "+1.581"
+            },
+            {
+                "name": "Daniel Ricciardo",
+                "shortName": "RIC",
+                "nationality": "Australian",
+                "lap": 18,
+                "currentTime": "1:31.878",
+                "gapToPrevious": "+0.136",
+                "gapToLeader": "+1.717"
+            },
+            {
+                "name": "Sebastian Vettel",
+                "shortName": "VET",
+                "nationality": "German",
+                "lap": 18,
+                "currentTime": "1:31.943",
+                "gapToPrevious": "+0.065",
+                "gapToLeader": "+1.782"
+            },
+            {
+                "name": "Carlos Sainz",
+                "shortName": "SAI",
+                "nationality": "Spanish",
+                "lap": 18,
+                "currentTime": "1:32.152",
+                "gapToPrevious": "+0.209",
+                "gapToLeader": "+1.991"
+            },
+            {
+                "name": "Fernando Alonso",
+                "shortName": "ALO",
+                "nationality": "Spanish",
+                "lap": 17,
+                "currentTime": "1:33.026",
+                "gapToPrevious": "+0.645",
+                "gapToLeader": "+2.865"
+            },
+            {
+                "name": "Kimi Raikkonen",
+                "shortName": "RAI",
+                "nationality": "Finnish",
+                "lap": 17,
+                "currentTime": "1:33.115",
+                "gapToPrevious": "+0.089",
+                "gapToLeader": "+2.954"
+            }
+        ]
+    }
+}

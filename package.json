@@ -4,7 +4,7 @@
   "description": "race data display versions ",
   "main": "index.js",
   "scripts": {
-    "netlify-build": "npm install --production",
+    "netlify-build": "NODE_ENV=production npm install",
     "start:dev": "http-server -c-1 -p 8081"
   },
   "repository": {
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/rselvasoyak/raceDisplayBar/issues"
   },
-  "homepage": "https://github.com/rselvasoyak/raceDisplayBar#readme",
-  "dependencies": {
-    "production": "^0.0.2"
-  }
+  "homepage": "https://github.com/rselvasoyak/raceDisplayBar#readme"
 }
