@@ -245,7 +245,7 @@ html, body {
   height: 200px;
 }
 
-main {
+.resultsMain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,6 +256,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   background-color: transparent;
+  height: 100vh;
 }
 
 .resultsContainer, .topContainer, .raceInfo, .timerInfo, .detailedRacerInfo, .timer, .temp {
@@ -366,6 +367,7 @@ main {
 }
 .resultsContainer .topContainer .timerInfo .timer p {
   margin: 0.5rem 0 0 0;
+  text-align: center;
   color: whitesmoke;
   text-shadow: -2px 1px 2px #000000;
 }
@@ -447,18 +449,25 @@ main {
 .resultsContainer .detailedRacerInfo tbody tr:nth-child(even) {
   background-color: #333745;
 }
+.resultsContainer .detailedRacerInfo tbody .data {
+  width: 15%;
+}
 
 html {
   background: transparent;
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
 }
 
 .mainFrame {
@@ -668,10 +677,23 @@ main {
 @media (max-width: 780px) {
   .resultsContainer .topContainer .raceInfo {
     padding: 0.6rem 1.2rem 0.7rem 1.2rem;
-    width: auto;
+    margin: 5px 2px;
+    min-width: 290px;
+    width: 47%;
+  }
+  .resultsContainer .topContainer .raceInfo h1 {
+    letter-spacing: -0.6px;
+    word-spacing: -1.5px;
+  }
+  .resultsContainer .topContainer .raceInfo h2 {
+    letter-spacing: -0.5px;
+    word-spacing: -0.6px;
+  }
+  .resultsContainer .topContainer .timerInfo {
+    min-width: 290px;
   }
   .resultsContainer .topContainer .timerInfo .timer {
-    font-size: 1.7rem;
+    font-size: 1.68rem;
     padding: 0.1rem 0;
   }
   .resultsContainer .topContainer .timerInfo .timer time {
@@ -686,14 +708,10 @@ main {
     padding-left: 1.2rem;
   }
 }
-@media (max-width: 682px) {
-  .resultsContainer .topContainer {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
+@media (max-width: 693px) {
   .resultsContainer .topContainer .raceInfo {
-    min-width: 300px;
-    width: 98%;
+    min-width: 270px;
+    width: auto;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -705,8 +723,7 @@ main {
     font-size: 2.2rem;
   }
   .resultsContainer .topContainer .timerInfo {
-    min-width: 300px;
-    width: 98%;
+    min-width: 270px;
   }
   .resultsContainer .topContainer .timerInfo .timer {
     font-size: 1.7rem;
@@ -731,6 +748,19 @@ main {
   .resultsContainer .detailedRacerInfo tbody tr td {
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
+  }
+}
+@media (max-width: 666px) {
+  .resultsContainer .topContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .resultsContainer .topContainer .raceInfo, .resultsContainer .topContainer .timerInfo {
+    width: 98%;
+  }
+  .resultsContainer tbody tr .switch4 {
+    padding-left: 0rem;
+    width: 13%;
   }
 }
 @media (max-width: 640px) {
@@ -799,7 +829,7 @@ main {
     max-width: 23vw;
   }
   .mainFrame .timer {
-    padding: 0.6rem 0.2rem;
+    padding: 0.6rem 0rem;
   }
   .mainFrame .timer time {
     font-size: 3.4rem;

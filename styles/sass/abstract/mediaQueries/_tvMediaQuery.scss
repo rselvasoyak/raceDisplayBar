@@ -4,14 +4,13 @@
     .mainFrame {
         max-width: 23vw;
         .timer {
-            padding: .6rem .2rem;
+            padding: .6rem 0rem;
             time {
                 font-size: 3.4rem;
             }
         }
         .racerData {
             table-layout: fixed;
-            // ????
             table {
                 thead {
                     tr {
@@ -86,9 +85,9 @@
 }
 
 @media (max-width: 690px) {
-        .mainFrame {
-            max-width: 36vw;
-        }
+    .mainFrame {
+        max-width: 36vw;
+    }
 }
 
 @media (max-width: 605px) {

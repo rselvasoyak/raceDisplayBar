@@ -2,9 +2,10 @@ html{
     background: transparent;
 }
 main{
+    display: flex;
     justify-content:flex-start;
-    align-items: flex-start;
-    // background-color: rgb(106, 106, 138);
+    align-items: center;
+    height: 100vh;
 }
 .mainFrame {
     margin-left: 2rem;
