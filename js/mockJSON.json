@@ -1,9 +1,9 @@
 {
     "raceInfo": {
         "status": {
-            "redFlag": false,
+            "redFlag": true,
             "yellowFlag": false,
-            "checkeredFlag": true,
+            "checkeredFlag": false,
             "greenFlag": false
         },
         "drivers" : [
