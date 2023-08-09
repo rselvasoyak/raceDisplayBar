@@ -1,5 +1,4 @@
 @media (max-width: 880px) {
-    // Results Version 
     .resultsContainer {
         .topContainer {
             .raceInfo {
@@ -48,17 +47,26 @@
 }
 
 @media (max-width: 780px) {
-    // Results Version
     .resultsContainer {
         .topContainer {
             .raceInfo {
                 padding:.6rem 1.2rem .7rem 1.2rem;
-                width: auto;
-
+                margin: 5px 2px;
+                min-width: 290px;
+                width: 47%;
+                h1{
+                    letter-spacing: -.6px;
+                    word-spacing: -1.5px;
+                }
+                h2 {
+                    letter-spacing: -.5px;
+                    word-spacing: -.6px;
+                }
             }
             .timerInfo {
+                min-width: 290px;
                 .timer {
-                    font-size: 1.7rem;
+                    font-size: 1.68rem;
                     padding: .1rem 0;
                     time {
                         font-size: 2.6rem;
@@ -79,14 +87,12 @@
     }
 }
 
-@media (max-width: 682px) {
-    // Results Version 
+@media (max-width: 693px) {
     .resultsContainer {
         .topContainer {
-            flex-wrap: wrap;
             .raceInfo {
-                min-width: 300px;
-                width: 98%;
+                min-width: 270px;
+                width: auto;
                 align-items: center;
                 h2 {
                     font-size: 1.6rem;
@@ -98,8 +104,7 @@
             }
 
             .timerInfo {
-                min-width: 300px;
-                width: 98%;
+                min-width: 270px;
                 .timer {
                     font-size: 1.70rem;
 
@@ -140,8 +145,22 @@
     }
 }
 
+@media (max-width: 666px){
+    .resultsContainer{
+        .topContainer{
+            flex-wrap: wrap;
+            .raceInfo, .timerInfo{
+                width: 98%;
+            }
+        }
+        tbody tr .switch4 {
+            padding-left: 0rem;
+            width: 13%;
+        }
+    }
+}
+
 @media (max-width: 640px) {
-    // Results Version
     .switch2{
         display: none;
     }
@@ -151,7 +170,6 @@
 }
 
 @media (max-width: 480px) {
-    // Results Version
     .resultsContainer {
         .topContainer {
             .raceInfo {
