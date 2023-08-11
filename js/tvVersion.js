@@ -15,6 +15,7 @@ const fetchData = () => {
         
         const status = json.raceInfo.status;
         const racerData = json.raceInfo.drivers;
+        
         updateMainFrameBorder(status);
         updateTableData(racerData);
     });

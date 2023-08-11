@@ -1,5 +1,10 @@
 {
     "raceInfo": {
+        "location": "Silverstone",
+        "raceTime": {
+            "hours": 1,
+            "minutes": 38
+        },
         "status": {
             "redFlag": true,
             "yellowFlag": false,

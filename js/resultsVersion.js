@@ -1,6 +1,9 @@
 // Define app namespace
 const raceDisplayApp = {};
 
+// OpenWeatherMap API key 
+const apiKey = '41ccd155c8cc679e660102df8b4b5bed';
+
 // Defining the init function for the tvVersion page
 raceDisplayApp.initResultsVersion = () => {
     fetchData(); 
@@ -14,9 +17,13 @@ const fetchData = () => {
         console.log(json);
         
         const status = json.raceInfo.status;
-        const racerData = json.raceInfo.drivers;
         updateResultsContainerBorder(status);
+
+        const racerData = json.raceInfo.drivers;
         updateTableData(racerData);
+
+        const location = json.raceInfo.location;
+        fetchWeatherData(location);
     });
 };
 
@@ -60,6 +67,30 @@ const updateTableData = (racerData) => {
         `;
         table.appendChild(newRow);
     });
+};
+
+const fetchWeatherData = (location) => {
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
+    
+    fetch(weatherUrl)
+    .then(response => response.json())
+    .then(weatherData => {
+        console.log(weatherData);
+        
+        const temperature = weatherData.main.temp;
+        const weatherIcon = weatherData.weather[0].icon;
+        updateWeatherInfo(temperature, weatherIcon);
+    })
+    .catch(error => {
+        console.error('Error fetching weather data:', error);
+    });
+};
+
+// Update weather information in the DOM
+const updateWeatherInfo = (temperature, weatherIcon) => {
+    const roundedTemperature = Math.round(temperature);
+    const tempElement = document.querySelector('.temp');
+    tempElement.innerHTML = `${roundedTemperature}°C <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon">`;
 };
 
 // Calling the init function for the tvVersion page
