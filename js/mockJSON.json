@@ -1,12 +1,19 @@
 {
     "raceInfo": {
+        "raceName": "ski ladies of gp1 moto 1",
+        "raceOrganizer": "regione sardegna gp of italy",
+        "location": "Silverstone",
+        "raceTime": {
+            "hours": 1,
+            "minutes": 38
+        },
         "status": {
             "redFlag": true,
             "yellowFlag": false,
             "checkeredFlag": false,
             "greenFlag": false
         },
-        "drivers" : [
+        "drivers": [
             {
                 "name": "Lewis Hamilton",
                 "shortName": "HAM",
@@ -14,7 +21,10 @@
                 "lap": 18,
                 "currentTime": "1:30.458",
                 "gapToPrevious": "+0.000",
-                "gapToLeader": "0.000"
+                "gapToLeader": "0.000",
+                "racerNumber": 101,
+                "countryName": "United Kingdom",
+                "countryCode": "GB"
             },
             {
                 "name": "Max Verstappen",
@@ -23,7 +33,10 @@
                 "lap": 18,
                 "currentTime": "1:30.924",
                 "gapToPrevious": "+0.753",
-                "gapToLeader": "+0.753"
+                "gapToLeader": "+0.753",
+                "racerNumber": 202,
+                "countryName": "Netherlands",
+                "countryCode": "NL"
             },
             {
                 "name": "Valtteri Bottas",
@@ -32,7 +45,10 @@
                 "lap": 18,
                 "currentTime": "1:31.183",
                 "gapToPrevious": "+0.259",
-                "gapToLeader": "+1.012"
+                "gapToLeader": "+1.012",
+                "racerNumber": 303,
+                "countryName": "Finland",
+                "countryCode": "FI"
             },
             {
                 "name": "Sergio Perez",
@@ -41,7 +57,10 @@
                 "lap": 18,
                 "currentTime": "1:31.569",
                 "gapToPrevious": "+0.386",
-                "gapToLeader": "+1.408"
+                "gapToLeader": "+1.408",
+                "racerNumber": 404,
+                "countryName": "Mexico",
+                "countryCode": "MX"
             },
             {
                 "name": "Lando Norris",
@@ -50,7 +69,10 @@
                 "lap": 18,
                 "currentTime": "1:31.662",
                 "gapToPrevious": "+0.093",
-                "gapToLeader": "+1.501"
+                "gapToLeader": "+1.501",
+                "racerNumber": 505,
+                "countryName": "United Kingdom",
+                "countryCode": "GB"
             },
             {
                 "name": "Charles Leclerc",
@@ -59,7 +81,10 @@
                 "lap": 18,
                 "currentTime": "1:31.742",
                 "gapToPrevious": "+0.080",
-                "gapToLeader": "+1.581"
+                "gapToLeader": "+1.581",
+                "racerNumber": 606,
+                "countryName": "Monaco",
+                "countryCode": "MC"
             },
             {
                 "name": "Daniel Ricciardo",
@@ -68,7 +93,10 @@
                 "lap": 18,
                 "currentTime": "1:31.878",
                 "gapToPrevious": "+0.136",
-                "gapToLeader": "+1.717"
+                "gapToLeader": "+1.717",
+                "racerNumber": 707,
+                "countryName": "Australia",
+                "countryCode": "AU"
             },
             {
                 "name": "Sebastian Vettel",
@@ -77,7 +105,10 @@
                 "lap": 18,
                 "currentTime": "1:31.943",
                 "gapToPrevious": "+0.065",
-                "gapToLeader": "+1.782"
+                "gapToLeader": "+1.782",
+                "racerNumber": 808,
+                "countryName": "Germany",
+                "countryCode": "DE"
             },
             {
                 "name": "Carlos Sainz",
@@ -86,7 +117,10 @@
                 "lap": 18,
                 "currentTime": "1:32.152",
                 "gapToPrevious": "+0.209",
-                "gapToLeader": "+1.991"
+                "gapToLeader": "+1.991",
+                "racerNumber": 909,
+                "countryName": "Spain",
+                "countryCode": "ES"
             },
             {
                 "name": "Fernando Alonso",
@@ -95,7 +129,10 @@
                 "lap": 17,
                 "currentTime": "1:33.026",
                 "gapToPrevious": "+0.645",
-                "gapToLeader": "+2.865"
+                "gapToLeader": "+2.865",
+                "racerNumber": 123,
+                "countryName": "Spain",
+                "countryCode": "ES"
             },
             {
                 "name": "Kimi Raikkonen",
@@ -104,7 +141,10 @@
                 "lap": 17,
                 "currentTime": "1:33.115",
                 "gapToPrevious": "+0.089",
-                "gapToLeader": "+2.954"
+                "gapToLeader": "+2.954",
+                "racerNumber": 234,
+                "countryName": "Finland",
+                "countryCode": "FI"
             }
         ]
     }
