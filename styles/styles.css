@@ -565,6 +565,14 @@ main {
   text-shadow: -2px 2px 5px #464545;
   font-style: italic;
 }
+.mainFrame .transitionFade {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.mainFrame .fade-out {
+  opacity: 0;
+}
 .mainFrame .racerData {
   width: 95%;
   height: 65%;

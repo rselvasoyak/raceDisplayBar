@@ -24,6 +24,11 @@ const fetchData = () => {
 
         const location = json.raceInfo.location;
         fetchWeatherData(location);
+
+        // Update the race time
+        const raceTime = json.raceInfo.raceTime;
+        updateRaceTime(raceTime);
+
     });
 };
 
@@ -51,7 +56,7 @@ const updateResultsContainerBorder = status => {
 const updateTableData = (racerData) => {
     console.log(racerData);
     const table = document.querySelector('table tbody');
-    table.innerHTML = ''; // Clear existing table rows
+    table.innerHTML = ''; 
 
     racerData.forEach((driver, index) => {
         const newRow = document.createElement('tr');
@@ -69,29 +74,41 @@ const updateTableData = (racerData) => {
     });
 };
 
-const fetchWeatherData = (location) => {
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
-    
-    fetch(weatherUrl)
-    .then(response => response.json())
-    .then(weatherData => {
-        console.log(weatherData);
-        
-        const temperature = weatherData.main.temp;
-        const weatherIcon = weatherData.weather[0].icon;
-        updateWeatherInfo(temperature, weatherIcon);
-    })
-    .catch(error => {
-        console.error('Error fetching weather data:', error);
-    });
+// Updating the race time 
+const updateRaceTime = (raceTime) => {
+    const raceTimeElement = document.querySelector('.timer time');
+    raceTimeElement.textContent = raceTime;
+
+    // Format and display the race time
+    const formattedRaceTime = `${raceTime.hours.toString().padStart(2, '0')}:${raceTime.minutes.toString().padStart(2, '0')}`;
+    raceTimeElement.textContent = formattedRaceTime;
 };
 
-// Update weather information in the DOM
-const updateWeatherInfo = (temperature, weatherIcon) => {
-    const roundedTemperature = Math.round(temperature);
-    const tempElement = document.querySelector('.temp');
-    tempElement.innerHTML = `${roundedTemperature}°C <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon">`;
-};
+// Updating Weather Info 
+    // Making Open Weather API Call 
+    const fetchWeatherData = (location) => {
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
+        
+        fetch(weatherUrl)
+        .then(response => response.json())
+        .then(weatherData => {
+            console.log(weatherData);
+            
+            const temperature = weatherData.main.temp;
+            const weatherIcon = weatherData.weather[0].icon;
+            updateWeatherInfo(temperature, weatherIcon);
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+    };
+
+    // Update weather information in the DOM
+    const updateWeatherInfo = (temperature, weatherIcon) => {
+        const roundedTemperature = Math.round(temperature);
+        const tempElement = document.querySelector('.temp');
+        tempElement.innerHTML = `${roundedTemperature}°C <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon">`;
+    };
 
 // Calling the init function for the tvVersion page
 raceDisplayApp.initResultsVersion();

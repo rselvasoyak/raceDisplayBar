@@ -1,20 +1,10 @@
 {
-  "name": "racedisplaydesign",
-  "version": "1.0.0",
-  "description": "race data display versions ",
-  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.65.1"
+  },
   "scripts": {
-    "netlify-build": "NODE_ENV=production npm install",
-    "start:dev": "http-server -c-1 -p 8081"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rselvasoyak/raceDisplayBar.git"
-  },
-  "author": "rselvasoyak",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rselvasoyak/raceDisplayBar/issues"
-  },
-  "homepage": "https://github.com/rselvasoyak/raceDisplayBar#readme"
+    "start": "live-server"   
+  }
+
 }

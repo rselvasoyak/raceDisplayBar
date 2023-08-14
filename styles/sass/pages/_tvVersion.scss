@@ -78,6 +78,16 @@ main{
             font-style: italic;
         }
     }
+    // Data Switch Animation? 
+    .transitionFade {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+    
     .racerData{
         width: 95%;
         height: 65%;
