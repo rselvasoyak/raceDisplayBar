@@ -29,7 +29,42 @@ const fetchData = () => {
         const raceTime = json.raceInfo.raceTime;
         updateRaceTime(raceTime);
 
-    });
+        // Toggling the data for Gap/Down & Best&Last BELOW ... PX
+            let displayType = 'gap'; 
+            if (screenWidth <= 768) {
+                displayType = 'gap';
+            }
+
+            toggleDataDisplay();
+
+            setInterval(() => {
+                toggleDataDisplay();
+            }, 5000);
+            });
+};
+
+// Periodically updating the Gap/Down & Best/Last BELOW ... PX 
+const toggleDataDisplay = () => {
+    const screenWidth = window.innerWidth; 
+    if (screenWidth <= 768) { 
+        const additionalInfoElements = document.querySelectorAll('.switch3'); 
+        additionalInfoElements.forEach((element, index) => {
+            const driver = racerData[index];
+            let dataToToggle;
+
+            // Determine which data to toggle based on displayType
+            if (displayType === 'gap') {
+                dataToToggle = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
+            } else if (displayType === 'best') {
+                dataToToggle = driver.bestLap;
+            } else if (displayType === 'last') {
+                dataToToggle = driver.lastLap;
+            }
+
+            element.textContent = dataToToggle;
+        });
+        displayLeaderGap = !displayLeaderGap; // Toggle the flag for the next iteration
+    }
 };
 
 // Updating the border color of resultsContainer based on the race status
