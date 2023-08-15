@@ -4,188 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <title>Results Version</title>
-    <script src="./js/resultsVersion.js"></script>
+    <title>TV Version</title>
 </head>
 <body>
-    <main class="resultsMain">
-        <section class="resultsContainer wrapper">
-            <div class="topContainer ">
-                <div class="raceInfo">
-                    <h2>
-                        regione sardegna gp of italy 
-                    </h2>
-                    <h1>
-                        ski ladies of gp1 moto 1
-                    </h1>
-                </div>
-                <div class="timerInfo">
-                    <div class="timer">
-                        <p>
-                            time left 
-                        </p>
-                        <time>
-                            00:00
-                        </time>
-                    </div>
-                    <div class="temp">
-                        27°C ☀️
-                    </div>
-                </div>
+    <main>
+        <section class="mainFrame wrapper">
+            <div class="logo">
+                <img alt="P1 Offshore Logo"src="./styles/sass/visuals/OffshoreLogo.svg"></img>
             </div>
-            <div class="detailedRacerInfo">
-                <table>
+            <div class="timer">
+                <p>
+                    ski ladies of gp 
+                    <span>
+                        moto 1
+                    </span>
+                </p>
+                <time>
+                    00:00
+                </time>
+            </div>
+            <div class="racerData">
+                 <table>
                     <thead>
-                        <tr>
-                            <th class="mobileExtra">#</th>
-                            <th class="mobileExtra">No</th>
-                            <th>Driver</th>
+                        <tr class="tableHeadings">
+                            <th>Name</th>
                             <th>Lap</th>
-                            <th class="switch1 best">Best</th>
-                            <th class="switch2 ">Last</th>
-                            <th class="switch3 ">Down</th>
-                            <th>Gap</th>
+                            <th>Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td class="mobileExtra">1</td>
-                            <td class="mobileExtra">7</td>
-                            <td>John Doe</td>
+                        <tr>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:22.345</td>
-                            <td class="switch2 data">1:24.567</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+2.456</td>
+                            <td class="racerTime">1:22.345</td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">2</td>
-                            <td class="mobileExtra">3</td>
-                            <td>Jane Smith</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.450</td>
-                            <td class="switch2 data">1:25.678</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class=" switch4 data">+3.987</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">3</td>
-                            <td class="mobileExtra">12</td>
-                            <td>Michael Johnson</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:20.345</td>
-                            <td class="switch2 data">1:23.567</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class=" switch4 data">+4.120</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">4</td>
-                            <td class="mobileExtra">9</td>
-                            <td>Susan Lee</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.567</td>
-                            <td class="switch2 data">1:26.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class=" switch4 data">+5.876</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">11</td>
-                            <td class="mobileExtra">6</td>
-                            <td>Robert Green</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:24.567</td>
-                            <td class="switch2 data">1:27.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+7.321</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">1</td>
-                            <td class="mobileExtra">7</td>
-                            <td>John Doe</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:22.345</td>
-                            <td class="switch2 data">1:24.567</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+2.456</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">4</td>
-                            <td class="mobileExtra">9</td>
-                            <td>Susan Lee</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.567</td>
-                            <td class="switch2 data">1:26.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+5.876</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">4</td>
-                            <td class="mobileExtra">9</td>
-                            <td>Susan Lee</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.567</td>
-                            <td class="switch2 data">1:26.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+5.876</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">4</td>
-                            <td class="mobileExtra">9</td>
-                            <td>Susan Lee</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.567</td>
-                            <td class="switch2 data">1:26.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+5.876</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">4</td>
-                            <td class="mobileExtra">9</td>
-                            <td>Susan Lee</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.567</td>
-                            <td class="switch2 data">1:26.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+5.876</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mobileExtra">4</td>
-                            <td class="mobileExtra">9</td>
-                            <td>Susan Lee</td>
+                            <td>NHS</td>
                             <td>25</td>
-                            <td class="switch1 best data">1:23.567</td>
-                            <td class="switch2 data">1:26.789</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+5.876</td>
+                            <td>
+                                <div class="timeInfo">
+                                    <span class="racerTime">1:22.345</span>
+                                    <span class="additionalInfo">G:+1:26</span>
+                                </div>
+                            </td>
                         </tr>
-                        <tr>
-                            <td class="mobileExtra">2</td>
-                            <td class="mobileExtra">3</td>
-                            <td>Jane Smith</td>
-                            <td>25</td>
-                            <td class="switch1 best data">1:23.450</td>
-                            <td class="switch2 data">1:25.678</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+3.987</td>
-                        </tr>
-                        <tr>
-                            <td class="mobileExtra">1</td>
-                            <td class="mobileExtra">7</td>
-                            <td>John Doe</td>
-                            <td>25</td>
-                            <td class="switch1 best data">1:22.345</td>
-                            <td class="switch2 data">1:24.567</td>
-                            <td class="switch3 data">+1 Lap</td>
-                            <td class="switch4 data">+2.456</td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
+    <script type="module" src="./js/tvVersion.js"></script>
 </body>
 </html>
