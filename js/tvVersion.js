@@ -3,7 +3,7 @@ const contentDiv = document.getElementById('content');
 
 // Check if the URL is /tv and load the TV content
 if (window.location.pathname === '/results') {
-    fetch('tv.html')
+    fetch('resultsVersion.html')
         .then(response => response.text())
         .then(content => {
             contentDiv.innerHTML = content;
