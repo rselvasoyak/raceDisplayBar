@@ -1,67 +1,68 @@
 // Define app namespace
 const raceDisplayApp = {};
 
-// Defining the init function for the tvVersion page
-raceDisplayApp.initTvVersion = () => {
-    fetchData(); 
-    setInterval(() => {
-        fetchDataAndLogGaps();
-    }, 5000); 
-};
-
 // Fetching mockJSON data and update border color
 const fetchData = () => {
     fetch('./js/mockJSON.json')
-    .then(response => response.json())
-    .then(json => {
-        console.log(json);
-        
-        const status = json.raceInfo.status;
-        updateMainFrameBorder(status);
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
 
-        const racerData = json.raceInfo.drivers;
-        updateTableData(racerData);
+            const status = json.raceInfo.status;
+            updateMainFrameBorder(status);
 
-        // Update the race time
-        const raceTime = json.raceInfo.raceTime;
-        updateRaceTime(raceTime);
+            const racerData = json.raceInfo.drivers;
 
-        const raceName = json.raceInfo.raceName; 
-        updateRaceName(raceName);
-    });
+            
+            // Update the TV Table Data
+            updateTableData(racerData);
+
+
+            // Periodically switch Gap/Down display
+            setInterval(() => {
+                populateAdditionalInfo(racerData);
+            }, 5000);
+
+            // Update the race time
+            const raceTime = json.raceInfo.raceTime;
+            updateRaceTime(raceTime);
+
+            const raceName = json.raceInfo.raceName;
+            updateRaceName(raceName);
+        });
 };
 
 // Periodically Switching the Gap / Down Display on screen
 const fetchDataAndLogGaps = () => {
     fetch('./js/mockJSON.json')
-    .then(response => response.json())
-    .then(json => {
-        const racerData = json.raceInfo.drivers;
-        logGaps(racerData);
-    });
+        .then(response => response.json())
+        .then(json => {
+            const racerData = json.raceInfo.drivers;
+            logGaps(racerData);
+        });
 };
 
 // Periodically Switching the Gap / Down Display on screen 
-    // Log gaps to leader and previous
-        let displayLeaderGap = true; // Start with leader gap
-        const logGaps = (racerData) => {
-            console.log("Gap to Leader or Gap to Previous:");
-            racerData.forEach((driver) => {
-                const gapToLog = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
-                console.log(`${driver.shortName} - Gap: ${gapToLog}`);
-            });
-            // Toggle the flag for the next iteration
-            displayLeaderGap = !displayLeaderGap;
-        };
-    // Populate the additionalInfo span with gaps
-    const populateAdditionalInfo = (racerData) => {
-        const additionalInfoElements = document.querySelectorAll('.additionalInfo');
-        additionalInfoElements.forEach((element, index) => {
-            const driver = racerData[index];
-            const gapToLog = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
-            element.textContent = `G: ${gapToLog}`;
-        });
-    };
+// Log gaps to leader and previous
+let displayLeaderGap = true; // Start with leader gap
+const logGaps = (racerData) => {
+    console.log("Gap to Leader or Gap to Previous:");
+    racerData.forEach((driver) => {
+        const gapToLog = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
+        console.log(`${driver.shortName} - Gap: ${gapToLog}`);
+    });
+    // Toggle the flag for the next iteration
+    displayLeaderGap = !displayLeaderGap;
+};
+// Populate the additionalInfo span with gaps
+const populateAdditionalInfo = (racerData) => {
+    const additionalInfoElements = document.querySelectorAll('.additionalInfo');
+    additionalInfoElements.forEach((element, index) => {
+        const driver = racerData[index];
+        const gapToLog = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
+        element.textContent = `G: ${gapToLog}`;
+    });
+}
 
 // Updating the Race Name 
 const updateRaceName = (raceName) => {
@@ -116,7 +117,15 @@ const updateRaceTime = (raceTime) => {
     // Format and display the race time
     const formattedRaceTime = `${raceTime.hours.toString().padStart(2, '0')}:${raceTime.minutes.toString().padStart(2, '0')}`;
     raceTimeElement.textContent = formattedRaceTime;
-    
+
+};
+
+// Defining the init function for the tvVersion page
+raceDisplayApp.initTvVersion = () => {
+    fetchData();
+    setInterval(() => {
+        fetchDataAndLogGaps();
+    }, 5000);
 };
 
 // Calling the init function for the tvVersion page
