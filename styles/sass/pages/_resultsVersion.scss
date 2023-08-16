@@ -1,3 +1,62 @@
+// Hamburger Menu Styling 
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .hamburger-icon {
+        width: 40px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .bar {
+            width: 100%;
+            height: 3px;
+            background-color: rgba($color: #333, $alpha: 0.5);
+        }
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #b7b6b5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        padding: 20px 15px;
+        width: auto;
+
+        a {
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-bottom: 1.5px solid grey;
+
+            &:hover, 
+            &:focus {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+
+    &.menu-open {
+        .menu {
+            display: flex;
+        }
+    }
+}
+
 .resultsMain{
     display: flex;
     justify-content: center;

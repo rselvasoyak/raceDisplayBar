@@ -1,19 +1,3 @@
-// Results URL Route 
-const contentDiv = document.getElementById('content');
-
-// Check if the URL is /tv and load the TV content
-if (window.location.pathname === '/results') {
-    fetch('resultsVersion.html')
-        .then(response => response.text())
-        .then(content => {
-            contentDiv.innerHTML = content;
-        })
-        .catch(error => {
-            console.error('Error loading TV content:', error);
-        });
-}
-
-
 // Define app namespace
 const raceDisplayApp = {};
 

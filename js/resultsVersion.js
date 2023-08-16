@@ -9,6 +9,19 @@ raceDisplayApp.initResultsVersion = () => {
     fetchData(); 
 };
 
+// Declaring racerData on global cope for all functions 
+let racerData;
+
+// When the hamburger Menu is clicked 
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const hamburgerIcon = document.querySelector(".hamburger-icon");
+
+    hamburgerIcon.addEventListener("click", function() {
+        hamburgerMenu.classList.toggle("menu-open");
+    });
+});
+
 // Fetching mockJSON data and update border color
 const fetchData = () => {
     fetch('./js/mockJSON.json')
@@ -35,27 +48,27 @@ const fetchData = () => {
                 displayType = 'gap';
             }
 
-            toggleDataDisplay();
+            toggleDataDisplay(displayType);
 
             setInterval(() => {
-                toggleDataDisplay();
+                toggleDataDisplay(displayType);
             }, 5000);
             });
 };
 
 // Periodically updating the Gap/Down & Best/Last BELOW ... PX 
 const toggleDataDisplay = () => {
-    const screenWidth = window.innerWidth; 
-    if (screenWidth <= 768) { 
-        const additionalInfoElements = document.querySelectorAll('.switch3'); 
-        additionalInfoElements.forEach((element, index) => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 768) {
+        const additionalInfoElements1 = document.querySelectorAll('.switch1');
+        const additionalInfoElements3 = document.querySelectorAll('.switch3');
+        
+        additionalInfoElements1.forEach((element, index) => {
             const driver = racerData[index];
             let dataToToggle;
 
             // Determine which data to toggle based on displayType
-            if (displayType === 'gap') {
-                dataToToggle = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
-            } else if (displayType === 'best') {
+            if (displayType === 'best') {
                 dataToToggle = driver.bestLap;
             } else if (displayType === 'last') {
                 dataToToggle = driver.lastLap;
@@ -63,7 +76,20 @@ const toggleDataDisplay = () => {
 
             element.textContent = dataToToggle;
         });
-        displayLeaderGap = !displayLeaderGap; // Toggle the flag for the next iteration
+
+        additionalInfoElements3.forEach((element, index) => {
+            const driver = racerData[index];
+            let dataToToggle;
+
+            // Determine which data to toggle based on displayType
+            if (displayType === 'gap') {
+                dataToToggle = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
+            }
+
+            element.textContent = `G: ${dataToToggle}`;
+        });
+
+        displayLeaderGap = !displayLeaderGap; 
     }
 };
 
@@ -101,9 +127,9 @@ const updateTableData = (racerData) => {
             <td>${driver.name}</td>
             <td>${driver.lap}</td>
             <td class="switch1 best data">${driver.currentTime}</td>
-            <td class="switch2 data">${driver.gapToPrevious}</td>
-            <td class="switch3 data">${driver.gapToLeader}</td>
-            <td class="switch4 data">+${(index + 2).toFixed(3)}</td>
+            <td class="switch2 data">${driver.currentTime}</td>
+            <td class="switch3 data">${driver.gapToPrevious}</td>
+            <td class="switch4 data">+${driver.gapToLeader}</td>
         `;
         table.appendChild(newRow);
     });
