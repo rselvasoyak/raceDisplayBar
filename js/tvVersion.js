@@ -75,7 +75,9 @@ const updateMainFrameBorder = status => {
     const mainFrame = document.querySelector('.mainFrame');
 
     if (status.checkeredFlag === true) {
-        mainFrame.style.borderColor = 'black';
+        mainFrame.style.borderColor = 'transparent';
+        mainFrame.style.borderImageSource = 'url("../styles/sass/visuals/checkered.png")'
+        mainFrame.style.borderImageSlice = '400'
     } else if (status.redFlag === true) {
         mainFrame.style.borderColor = 'red';
     } else if (status.yellowFlag === true) {

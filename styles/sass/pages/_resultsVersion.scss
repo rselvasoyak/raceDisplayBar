@@ -1,4 +1,6 @@
-// Hamburger Menu Styling 
+@use "../abstract/variables" as *;
+
+// Hamburger Menu Styling
 .hamburger-menu {
     position: fixed;
     top: 20px;
@@ -19,14 +21,14 @@
         .bar {
             width: 100%;
             height: 3px;
-            background-color: rgba($color: #333, $alpha: 0.5);
+            background-color: rgba($colorTextShadowDarkGrey, 0.5);
         }
     }
 
     .menu {
         display: none;
         flex-direction: column;
-        background-color: #b7b6b5;
+        background-color: $colorBlueGreyBackground;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         position: absolute;
@@ -36,16 +38,16 @@
         width: auto;
 
         a {
-            color: #333;
-            font-size: 1.6rem;
-            font-weight: 600;
+            color: $colorTextShadowDarkGrey;
+            font-size: $fontSizeInfo; 
+            font-weight: $fontWeightMedium; 
             text-decoration: none;
             padding: 10px 20px;
-            border-bottom: 1.5px solid grey;
+            border-bottom: 1.5px solid $colorBorderBottomGrey;
 
-            &:hover, 
+            &:hover,
             &:focus {
-                background-color: #f0f0f0;
+                background-color: $colorLightGreyBackground;
             }
         }
     }
@@ -57,152 +59,182 @@
     }
 }
 
-.resultsMain{
+.resultsMain {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: $colorTransparent;
     height: 100vh;
 }
 
-.resultsContainer, .topContainer, .raceInfo, .timerInfo, .detailedRacerInfo, .timer, .temp{
+.resultsContainer,
+.topContainer,
+.raceInfo,
+.timerInfo,
+.detailedRacerInfo,
+.timer,
+.temp {
     border-radius: 25px;
 }
+
 .resultsContainer {
-    border: 15px solid green;
-    background-color: rgba($color: #d9d7d7, $alpha: 0.3);
+    border-style: solid;
+    border-width: 18px;
+    border-image-source: none;
+    border-image-repeat: round;
+    border-image-slice: fill;
+    background-color: $colorLightGreyBackground;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-family: 'Inter', sans-serif;
-    box-shadow: -2px 2px 6px #303030;
-    .topContainer{
+    box-shadow: -5px 5px 6px rgba($colorTextShadowDarkGrey, 0.2);
+
+    .topContainer {
         width: 95%;
         padding: .5rem 0;
         margin: 1rem 0 .5rem 0;
-        background-color: green;
-        box-shadow: -1px 1px 6px #252525;
+        background-color: $colorTransparent;
+        background-size: contain;
+        box-shadow: -1px 1px 6px $colorDarkGreyBackground;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        .timerInfo, .raceInfo{
-            height: 90%;
-        }
-        .raceInfo{
+
+        .raceInfo {
             width: 48%;
             padding: .6rem 0 .7rem 2rem;
             margin: .5rem 0;
-            background-color: whitesmoke;
+            background-color: $colorTextWhiteSmoke;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            h2{
-                font-size: 1.8rem;
+
+            h2 {
+                font-size: $fontSizeMedium; 
                 margin: 0;
                 text-transform: uppercase;
                 font-style: italic;
-                font-weight: 450;
-                text-shadow: -.2px .2px 2px #252525;
+                font-weight: $fontWeightMedium; 
+                text-shadow: -.2px .2px 2px $colorTextShadowGrey;
             }
-            h1{
-                font-size: 2.1rem;
+
+            h1 {
+                font-size: $fontSizeLarge; 
                 text-transform: uppercase;
                 margin-bottom: 0;
                 margin-top: .7rem;
-                font-weight: 800;
-                text-shadow: -.5px .5px 2px #252525;
+                font-weight: $fontWeightBold; 
+                text-shadow: -.5px .5px 2px $colorTextShadowGrey;
             }
         }
-        .timerInfo{
+
+        .timerInfo {
             width: 48%;
-            background-color: whitesmoke;
+            background-color: $colorTextWhiteSmoke;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            .timer{
+
+            .timer {
                 width: 55%;
-                background-color: #E15805;
+                background-color: $colorOrangeBackground;
                 margin: .2rem .3rem;
-                font-size: 1.8rem;
+                font-size: $fontSizeMedium; 
                 text-transform: uppercase;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                p{
+
+                p {
                     margin: .5rem 0 0 0;
                     text-align: center;
-                    color: whitesmoke;
-                    text-shadow: -2px 1px 2px #000000;
+                    color: $colorTextWhiteSmoke;
+                    text-shadow: -2px 1px 2px $colorTextShadowDarkGrey;
                 }
-                time{
-                    font-size: 3rem;
+
+                time {
+                    font-size: $fontSizeExtraLarge; 
                     margin-bottom: .22rem;
-                    color: whitesmoke;
-                    text-shadow: -3px 1px 2px #252525;
+                    color: $colorTextWhiteSmoke;
+                    text-shadow: -3px 1px 2px $colorTextShadowGrey;
                 }
             }
-            .temp{
+
+            .temp {
                 width: 45%;
                 height: 95%;
-                font-size: 3.2rem;
+                font-size: $fontSizeExtraLarge; 
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                text-shadow: -2px 1px 3px #000000;
+                text-shadow: -2px 1px 3px $colorTextShadowDarkGrey;
             }
         }
     }
-    .detailedRacerInfo{
-        color: whitesmoke;
+
+    .detailedRacerInfo {
+        color: $colorTextWhiteSmoke;
         width: 95%;
         display: flex;
         flex-direction: column;
         align-content: space-between;
         justify-content: center;
         margin: .5rem 0 1rem 0;
-        box-shadow: -2px 2px 6px #303030;
-        table{
+        box-shadow: -2px 2px 6px $colorBoxShadowDarkGrey;
+
+        table {
             text-align: left;
-            // border: 2px solid green;
             height: 100%;
-            font-size: 1.7rem;
+            font-size: $fontSizeTable; 
             border-collapse: collapse;
         }
-        thead tr th, tbody tr td{
+
+        thead tr th,
+        tbody tr td {
             padding-left: 2.7rem;
         }
+
         thead tr {
             border-radius: 20px;
-            background-color: #252525;
-            th{
+            background-color: $colorDarkGreyBackground;
+
+            th {
                 padding: 1rem 0 1rem 2.7rem;
-                text-shadow: -1px 1px 2px grey;
-                box-shadow: -.2px -.2px 2px #252525;
+                font-size: $fontSizeMedium; 
+                text-shadow: -1px 1px 2px $colorTextShadowGrey;
+                box-shadow: -.2px -.2px 2px $colorDarkGreyBackground;
             }
         }
-        tbody{
+
+        tbody {
             padding-left: 3%;
-            tr{
-                box-shadow: -.2px -.2px 2px #303030;
+
+            tr {
+                box-shadow: -.2px -.2px 2px $colorBoxShadowDarkGrey;
             }
-            tr td{
+
+            tr td {
                 padding-top: .8rem;
                 padding-bottom: .8rem;
-                text-shadow: -2px 1px 2px #000000;
+                font-size: $fontSizeTable;
+                text-shadow: -2px 1px 2px $colorTextShadowDarkGrey;
             }
+
             tr:nth-child(odd) {
-                    background: linear-gradient(to bottom, #333745 1%,
-                            #4c516d 30%,
-                            #9198af 90%,
-                        rgb(179, 179, 179) 
-                        100%);
-                }
-            tr:nth-child(even){
-                background-color:rgba(#333745, 1);
+                background: linear-gradient(to bottom, $colorEvenDarkerGreyBackground 1%,
+                        $colorDarkerGreyBackground 30%,
+                        $colorBlueGreyBackground 90%,
+                        $colorBorderBottomGrey 100%);
             }
-            .data{
+
+            tr:nth-child(even) {
+                background-color: rgba($colorEvenDarkerGreyBackground, 1);
+            }
+
+            .data {
                 width: 15%;
             }
         }

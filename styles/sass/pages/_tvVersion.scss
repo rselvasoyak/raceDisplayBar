@@ -1,38 +1,50 @@
-html{
-    background: transparent;
+@use "../abstract/variables" as *;
+
+html {
+    background: $colorTransparent;
 }
-main{
+
+main {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
-    // height: 100vh;
+    height: 100vh;
 }
+
 .mainFrame {
     margin-left: 2rem;
     max-width: 20vw;
     border: 13px solid transparent;
+    border-image-source: none;
+    border-image-repeat: round;
+    border-image-slice: fill;
     box-sizing: content-box;
     border-radius: 25px;
-    color: whitesmoke;
-    background-color: rgba(217, 215, 215, 0.3);
+    color: $colorTextWhiteSmoke;
+    background-color: $colorLightGreyBackground;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 4px 0;
-    box-shadow: -2px 2px 6px #303030;
+    box-shadow: -2px 2px 6px rgba($colorTextShadowDarkGrey, 0.2);
     font-family: 'Inter', sans-serif;
-    .logo, .timer, .racerData {
+
+    .logo,
+    .timer,
+    .racerData {
         border-radius: 20px;
-        box-shadow: -1px 1px 6px #303030;
+        box-shadow: -1px 1px 6px $colorBoxShadowDarkGrey;
     }
-    .logo{
+
+    .logo {
         width: 96%;
         padding: 1rem;
         box-sizing: border-box;
         height: 10%;
-        background-color: #252525;
+        background-color: $colorDarkGreyBackground;
         display: flex;
-        img{
+
+        img {
             max-width: 100%;
             width: 100%;
             max-height: 100%;
@@ -40,45 +52,51 @@ main{
             object-position: center;
         }
     }
-    // The class will apply when the tablet screen changes orientation
-    .horizontalTablet{
+
+    .horizontalTablet {
         display: none;
     }
-    .timer{
+
+    .timer {
         width: 95%;
         padding: .5rem 0rem;
         box-sizing: border-box;
         margin: 5px 0;
-        background-color: #E15805;
+        background-color: $colorOrangeBackground;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-content: center;
-        p, time{
+
+        p,
+        time {
             text-align: center;
             align-self: center;
         }
-        p{
+
+        p {
             width: 100%;
-            font-size: 1.65rem;
+            font-size: $fontSizeMedium; 
             text-transform: uppercase;
             margin: 0;
             padding: 0rem;
             letter-spacing: -.3px;
-            font-weight: 600;
-            text-shadow: -1.5px 1.5px 5px #343434;
+            font-weight: $fontWeightMedium;
+            text-shadow: -1.5px 1.5px 5px $colorTextShadowDarkGrey;
+
             span {
-                    display: inline-block;
-                }
+                display: inline-block;
+            }
         }
-        time{
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: -2px 2px 5px #464545;
+
+        time {
+            font-size: $fontSizeExtraLarge; 
+            font-weight: $fontWeightBold; 
+            text-shadow: -2px 2px 5px $colorTextShadowGrey;
             font-style: italic;
         }
     }
-    // Data Switch Animation? 
+
     .transitionFade {
         opacity: 1;
         transition: opacity 0.5s ease;
@@ -87,8 +105,8 @@ main{
     .fade-out {
         opacity: 0;
     }
-    
-    .racerData{
+
+    .racerData {
         width: 95%;
         height: 65%;
         border-radius: 25px;
@@ -96,60 +114,71 @@ main{
         flex-direction: column;
         justify-content: center;
         table-layout: fixed;
-        table{
+
+        table {
             text-align: left;
-            font-size: 1.7rem;
+            font-size: $fontSizeTable; 
             width: 100%;
             border-radius: 20px;
             table-layout: auto;
             align-self: center;
             border-collapse: collapse;
-            background-color: #252525;
+            background-color: $colorDarkGreyBackground;
+
             thead tr th,
             tbody tr td {
                 padding-left: 2.7rem;
             }
-            thead{
+
+            thead {
                 text-align: left;
                 box-sizing: border-box;
                 width: 100%;
-                tr{
+
+                tr {
                     width: 100%;
-                    th{
-                        // padding: .7rem .2rem .4rem .8rem;
-                        padding: 1rem;
+
+                    th {
+                        padding: 1rem 0 1rem 2.7rem;
+                        font-size: $fontSizeMedium; 
                         text-transform: uppercase;
                         font-style: italic;
                     }
                 }
             }
-            tbody{
-                color: whitesmoke;
-                font-size: 1.8rem;
-                tr td{
+
+            tbody {
+                color: $colorTextWhiteSmoke;
+                font-size: $fontSizeTable; 
+
+                tr td {
                     padding: .4rem .6rem .4rem .8rem;
                     width: calc(100% / 3);
-                    text-shadow: -1px 1px 5px #252525;
-                    &:last-child{
-                        padding-left: 0rem;   
+                    text-shadow: -1px 1px 5px $colorTextShadowDarkGrey;
+
+                    &:last-child {
+                        padding-left: 0rem;
                     }
                 }
-                tr:nth-child(odd){
-                    background:linear-gradient(to bottom,#404056 15%,
-                        #4c516d 40%,
-                        #9198af 80%,
-                        rgb(179, 179, 179) 100%);
+
+                tr:nth-child(odd) {
+                    background: linear-gradient(to bottom, $colorEvenDarkerGreyBackground 15%,
+                            $colorDarkerGreyBackground 40%,
+                            $colorBlueGreyBackground 80%,
+                            $colorBorderBottomGrey 100%);
                 }
-                tr:nth-child(even){
-                    background-color: #333745;
-                
+
+                tr:nth-child(even) {
+                    background-color: $colorEvenDarkerGreyBackground;
                 }
-                .racerTime{
-                    font-size: 1.9rem;
-                    font-weight: 600;
+
+                .racerTime {
+                    font-size: $fontSizeMedium; 
+                    font-weight: $fontWeightMedium; 
                 }
-                .additionalInfo{
-                    font-size: 1.6rem;
+
+                .additionalInfo {
+                    font-size: $fontSizeSmall; 
                     position: relative;
                     right: -20%;
                     font-style: italic;
@@ -158,4 +187,3 @@ main{
         }
     }
 }
-

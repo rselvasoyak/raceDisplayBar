@@ -9,8 +9,9 @@ raceDisplayApp.initResultsVersion = () => {
     fetchData(); 
 };
 
-// Declaring racerData on global cope for all functions 
+// // Declaring racerData on global cope for all functions 
 let racerData;
+let isGapToLeader = true; // To track the current display type
 
 // When the hamburger Menu is clicked 
 document.addEventListener("DOMContentLoaded", function() {
@@ -22,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Variable to track the current display type
+let displayType = 'gapToLeader';
+let displayLeaderGap = true;
+
 // Fetching mockJSON data and update border color
 const fetchData = () => {
     fetch('./js/mockJSON.json')
@@ -32,7 +37,7 @@ const fetchData = () => {
         const status = json.raceInfo.status;
         updateResultsContainerBorder(status);
 
-        const racerData = json.raceInfo.drivers;
+        racerData = json.raceInfo.drivers;
         updateTableData(racerData);
 
         const location = json.raceInfo.location;
@@ -42,36 +47,53 @@ const fetchData = () => {
         const raceTime = json.raceInfo.raceTime;
         updateRaceTime(raceTime);
 
-        // Toggling the data for Gap/Down & Best&Last BELOW ... PX
-            let displayType = 'gap'; 
-            if (screenWidth <= 768) {
-                displayType = 'gap';
-            }
+        // Log the racerData before updating the table (only for smaller screens)
+        const screenWidth = window.innerWidth;
+        // Update the table with racerData (only for smaller screens)
 
-            toggleDataDisplay(displayType);
+
+        if (screenWidth <= 768) {
+            updateTableData(racerData, isGapToLeader);
 
             setInterval(() => {
-                toggleDataDisplay(displayType);
+                console.clear(); // Clear the console
+                console.log("Gap Data:");
+
+                racerData.forEach(driver => {
+                    const gapData = isGapToLeader ? driver.gapToLeader : driver.gapToPrevious;
+                    console.log(`${driver.name}: ${gapData}`);
+                });
+
+                // Toggle between gapToLeader and gapToPrevious
+                isGapToLeader = !isGapToLeader;
+
+                // Update the displayed data in the DOM (only for smaller screens)
+                updateTableData(racerData, isGapToLeader);
             }, 5000);
-            });
+        }
+    });
 };
 
 // Periodically updating the Gap/Down & Best/Last BELOW ... PX 
-const toggleDataDisplay = () => {
+const toggleDataDisplay = (racerData) => {
+    console.log(displayType)
     const screenWidth = window.innerWidth;
+
     if (screenWidth <= 768) {
         const additionalInfoElements1 = document.querySelectorAll('.switch1');
-        const additionalInfoElements3 = document.querySelectorAll('.switch3');
-        
+        const additionalInfoElements3 = document.querySelectorAll('.switch4');
+
         additionalInfoElements1.forEach((element, index) => {
             const driver = racerData[index];
             let dataToToggle;
 
             // Determine which data to toggle based on displayType
-            if (displayType === 'best') {
-                dataToToggle = driver.bestLap;
-            } else if (displayType === 'last') {
-                dataToToggle = driver.lastLap;
+            if (displayType === 'currentTime') {
+                dataToToggle = driver.currentTime;
+            } else if (displayType === 'gapToPrevious') {
+                dataToToggle = driver.gapToPrevious;
+            } else if (displayType === 'gapToLeader') {
+                dataToToggle = driver.gapToLeader;
             }
 
             element.textContent = dataToToggle;
@@ -82,8 +104,20 @@ const toggleDataDisplay = () => {
             let dataToToggle;
 
             // Determine which data to toggle based on displayType
-            if (displayType === 'gap') {
-                dataToToggle = displayLeaderGap ? driver.gapToLeader : driver.gapToPrevious;
+            if (displayType === 'currentTime') {
+                dataToToggle = driver.currentTime;
+            } else if (displayType === 'gapToPrevious') {
+                dataToToggle = driver.gapToPrevious;
+            } else if (displayType === 'gapToLeader') {
+                dataToToggle = driver.gapToLeader;
+
+                // Check if the value is below 3 seconds and change the background color
+                if (parseFloat(dataToToggle) < 3.0) {
+                    console.log("it is below 3 seconds")
+                    element.style.backgroundColor = 'red'; 
+                } else {
+                    element.style.backgroundColor = 'inherit'; 
+                }
             }
 
             element.textContent = `G: ${dataToToggle}`;
@@ -99,8 +133,12 @@ const updateResultsContainerBorder = status => {
     const topContainer = document.querySelector('.topContainer');
 
     if (status.checkeredFlag === true) {
-        resultsContainer.style.borderColor = 'black';
-        topContainer.style.backgroundColor = 'black'
+        resultsContainer.style.borderColor = 'transparent';
+        resultsContainer.style.borderImageSource = 'url("../styles/sass/visuals/checkered.png")'
+        resultsContainer.style.borderImageSlice = '400'
+
+        topContainer.style.backgroundImage = 'url("../styles/sass/visuals/checkered.png")'
+        topContainer.style.backgroundSize = 'repeat';
     } else if (status.redFlag === true) {
         resultsContainer.style.borderColor = 'red';
         topContainer.style.backgroundColor = 'red'
@@ -129,12 +167,22 @@ const updateTableData = (racerData) => {
             <td class="switch1 best data">${driver.currentTime}</td>
             <td class="switch2 data">${driver.currentTime}</td>
             <td class="switch3 data">${driver.gapToPrevious}</td>
-            <td class="switch4 data">+${driver.gapToLeader}</td>
+            <td class="switch4 data">${isGapToLeader ? driver.gapToLeader : driver.gapToPrevious}</td>
         `;
+
+        // Check if the value is below 3 seconds and change the background color
+        const gapDataCell = newRow.querySelector('.switch4');
+        if (parseFloat(driver.gapToLeader) < 3.0) {
+            console.log("it is below 3 seconds")
+            gapDataCell.style.backgroundColor = 'red'; 
+        }
+
         table.appendChild(newRow);
     });
 };
 
+
+// ${isGapToLeader ? driver.gapToLeader : driver.gapToPrevious}
 // Updating the race time 
 const updateRaceTime = (raceTime) => {
     const raceTimeElement = document.querySelector('.timer time');
