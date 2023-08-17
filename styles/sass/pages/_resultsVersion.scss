@@ -175,6 +175,19 @@
         }
     }
 
+    // Best Time and Below 3 Second Gap Color Codes 
+    .metallicRedBg {
+        background: linear-gradient(to bottom, $metallicRed, darken($metallicRed, 20%));
+        border-radius: 5px;
+        box-shadow: -2px 2px 4px rgba($colorTextShadowDarkGrey, 0.5);
+    }
+
+    .metallicGreenBg {
+        background: linear-gradient(to bottom, $metallicGreen, darken($metallicGreen, 50%));
+        border-radius: 5px;
+        box-shadow: -2px 2px 4px rgba($colorTextShadowDarkGrey, 0.5);
+    }
+
     .detailedRacerInfo {
         color: $colorTextWhiteSmoke;
         width: 95%;

@@ -174,7 +174,13 @@ const updateTableData = (racerData) => {
         const gapDataCell = newRow.querySelector('.switch4');
         if (parseFloat(driver.gapToLeader) < 3.0) {
             console.log("it is below 3 seconds")
-            gapDataCell.style.backgroundColor = 'red'; 
+            gapDataCell.classList.add('metallicRedBg');
+        }
+
+        // Check if the currentTime is the closest to 0 and change background accordingly 
+        const bestTimeCell = newRow.querySelector('.best');
+        if (driver.bestLap) {
+            bestTimeCell.classList.add('metallicGreenBg');
         }
 
         table.appendChild(newRow);
