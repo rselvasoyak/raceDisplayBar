@@ -323,8 +323,11 @@ html, body {
 }
 .racerData table tbody tr td {
   padding: 0.4rem 0.6rem 0.4rem 0.8rem;
-  width: 33.3333333333%;
+  width: 55%;
   text-shadow: -1px 1px 5px #343434;
+}
+.racerData table tbody tr td:nth-child(2n) {
+  width: 15%;
 }
 .racerData table tbody tr td:last-child {
   padding-left: 0rem;
@@ -343,7 +346,7 @@ html, body {
 .racerData table tbody .additionalInfo {
   font-size: 1.65rem;
   position: relative;
-  right: -20%;
+  right: -10%;
   font-style: italic;
 }
 
