@@ -1,0 +1,41 @@
+@use "../abstract/variables" as *;
+
+.timer {
+    width: 95%;
+    padding: .5rem 0rem;
+    box-sizing: border-box;
+    margin: 5px 0;
+    background-color: $colorOrangeBackground;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+
+    p,
+    time {
+        text-align: center;
+        align-self: center;
+    }
+
+    p {
+        width: 100%;
+        font-size: $fontSizeMedium;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0rem;
+        letter-spacing: -.3px;
+        font-weight: $fontWeightMedium;
+        text-shadow: -1.5px 1.5px 5px $colorTextShadowDarkGrey;
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    time {
+        font-size: $fontSizeExtraLarge;
+        font-weight: $fontWeightBold;
+        text-shadow: -2px 2px 5px $colorTextShadowGrey;
+        font-style: italic;
+    }
+}

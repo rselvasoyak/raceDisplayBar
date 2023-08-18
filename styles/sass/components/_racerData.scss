@@ -1,0 +1,93 @@
+@use "../abstract/variables" as *;
+
+.racerData {
+    width: 95%;
+    height: 65%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    table-layout: fixed;
+
+    .additionalInfo.fade-in {
+        opacity: 1;
+        transition: opacity 3s ease-in-out;
+    }
+
+    .additionalInfo.fade-out {
+        opacity: 0;
+        transition: opacity 3s ease-in-out;
+    }
+
+    table {
+        text-align: left;
+        font-size: $fontSizeTable;
+        width: 100%;
+        border-radius: 20px;
+        table-layout: auto;
+        align-self: center;
+        border-collapse: collapse;
+        background-color: $colorDarkGreyBackground;
+
+        thead tr th,
+        tbody tr td {
+            padding-left: 2.7rem;
+        }
+
+        thead {
+            text-align: left;
+            box-sizing: border-box;
+            width: 100%;
+
+            tr {
+                width: 100%;
+
+                th {
+                    padding: 1rem 0 1rem 2.7rem;
+                    font-size: $fontSizeMedium;
+                    text-transform: uppercase;
+                    font-style: italic;
+                }
+            }
+        }
+
+        tbody {
+            color: $colorTextWhiteSmoke;
+            font-size: $fontSizeTable;
+            font-family: 'Roboto', sans-serif;
+
+            tr td {
+                padding: .4rem .6rem .4rem .8rem;
+                width: calc(100% / 3);
+                text-shadow: -1px 1px 5px $colorTextShadowDarkGrey;
+
+                &:last-child {
+                    padding-left: 0rem;
+                }
+            }
+
+            tr:nth-child(odd) {
+                background: linear-gradient(to bottom, $colorEvenDarkerGreyBackground 15%,
+                        $colorDarkerGreyBackground 40%,
+                        $colorBlueGreyBackground 80%,
+                        $colorBorderBottomGrey 100%);
+            }
+
+            tr:nth-child(even) {
+                background-color: $colorEvenDarkerGreyBackground;
+            }
+
+            .racerTime {
+                font-size: $fontSizeMedium;
+                font-weight: $fontWeightMedium;
+            }
+
+            .additionalInfo {
+                font-size: $fontSizeSmall;
+                position: relative;
+                right: -20%;
+                font-style: italic;
+            }
+        }
+    }
+}
